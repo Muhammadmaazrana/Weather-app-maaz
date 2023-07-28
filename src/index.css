@@ -1,0 +1,41 @@
+/* styles.css */
+
+body {
+  /* Apply the background image to the body */
+  background-image: url('your-image-url');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Optional: Set a fallback background color */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  height: 100%;
+   /* Use rgba to set the background color with opacity */
+  /* If the background image doesn't load or takes time to load, the fallback color will be visible */
+  z-index: -1; /* Send the pseudo-element to the back so that it doesn't cover other content */
+}
+/* styles.css */
+
+.background-div {
+  background-color: transparent; /* Remove the background color */
+  border: none; /* Remove the border */
+}
+
+.card-body{
+  border: none;
+}
+.container{
+  border: none;
+}
+/* styles.css */
+
+.card {
+  border: none; /* Remove the border */
+}
