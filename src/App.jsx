@@ -34,7 +34,6 @@ function App() {
   // List of background images (add your own image URLs here)
   const backgroundImages = [
     'url("https://images.pexels.com/photos/6195003/pexels-photo-6195003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
-    'url("https://images.pexels.com/photos/2422497/pexels-photo-2422497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
     'url("https://images.pexels.com/photos/3227984/pexels-photo-3227984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
     'url("https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80")',
     'url("https://images.unsplash.com/photo-1562494400-5b335a653209?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=462&q=80)',
@@ -61,12 +60,12 @@ function App() {
   }, [backgroundIndex]);
 
   return (
-    <div className="container">
-      <div className="row justify-content-center mt-5">
-        <div className="col-lg-6 col-md-8 col-sm-10">
-        <div id="background" className="background-div">
-          <div className="card bg-transparent border-0">
-            <div className="card-body">
+    <div className="background-div">
+      <div className="container">
+        <div className="row justify-content-center mt-5">
+          <div className="col-lg-6 col-md-8 col-sm-10">
+            <div className="card bg-transparent border-0">
+              <div className="card-body">
               <h1 className="text-center mb-4"><b>Weather App</b></h1>
               <div className="input-group">
                 <input
@@ -84,22 +83,22 @@ function App() {
               {weather ? (
                 <div className="weather-info">
                   <h2 className="text-center mb-4">
-                    {weather.name}, {weather.sys.country}
+                 <b>   {weather.name}, {weather.sys.country}</b>
                   </h2>
                   <div className="d-flex justify-content-center align-items-center weather-icon">
                     <img
                       src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                       alt="Weather Icon"
                     />
-                    <h3 className="ms-3 weather-description">
-                      {weather.weather[0].description}
+                    <h3 className="ms-3 weather-description"><b>
+                      {weather.weather[0].description}</b>
                     </h3>
                   </div>
                   <div className="text-center mt-4 weather-details">
-                    <h1 className="display-1">{weather.main.temp}°C</h1>
-                    <p>Feels like: {weather.main.feels_like}°C</p>
-                    <p>Humidity: {weather.main.humidity}%</p>
-                    <p>Wind: {weather.wind.speed} m/s</p>
+                    <h1 className="display-1"><b>{weather.main.temp}°C</b></h1>
+                    <p><b>Feels like: {weather.main.feels_like}°C</b></p>
+                    <p><b>Humidity: {weather.main.humidity}%</b></p>
+                    <p><b>Wind: {weather.wind.speed} m/s</b></p>
                   </div>
                 </div>
               ) : (
